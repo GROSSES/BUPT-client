@@ -11,6 +11,10 @@ class FlashViewer : public QWebEngineView {
 public:
     explicit FlashViewer(QWidget *parent = nullptr);
 
+    void setUrl(const QString &url);
+
+private:
+    QWebEnginePage *getWebEnginePage();
 };
 
 
