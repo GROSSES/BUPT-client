@@ -1,14 +1,10 @@
-#include <cpr/cpr.h>
+#include "mainwindow.h"
+
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QTextEdit>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    QTextEdit *textEdit = new QTextEdit;
-
-    auto response = cpr::Get(cpr::Url{"http://www.baidu.com"});
-    textEdit->setText(QString::fromStdString(response.text));
-    textEdit->show();
-
+    MainWindow mainWindow;
+    mainWindow.show();
     return app.exec();
 }
